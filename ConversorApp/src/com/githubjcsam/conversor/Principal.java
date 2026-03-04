@@ -1,5 +1,6 @@
 package com.githubjcsam.conversor;
 
+import com.githubjcsam.conversor.modelo.Moneda;
 import com.githubjcsam.conversor.service.ConversorService;
 
 import java.util.Scanner;
@@ -24,8 +25,27 @@ public class Principal {
             System.out.println("Ingrese la cantidad: ");
             double cantidad = scanner.nextDouble();
 
-
+            try{
+                double resultado = switch (opcion){
+                    case 1 -> service.convertir(Moneda.USD, Moneda.ARS, cantidad);
+                    case 2 -> service.convertir(Moneda.ARS, Moneda.USD, cantidad);
+                    case 3 -> service.convertir(Moneda.USD, Moneda.BRL, cantidad);
+                    case 4 -> service.convertir(Moneda.BRL, Moneda.USD, cantidad);
+                    case 5 -> service.convertir(Moneda.USD, Moneda.COP, cantidad);
+                    case 6 -> service.convertir(Moneda.COP, Moneda.USD, cantidad);
+                    default -> {
+                        System.out.println("Opcion invalida!");
+                        yield 0;
+                    }
+                };
+                if(opcion >= 1 && opcion <= 6){
+                    System.out.println("Resultado: " + resultado);
+                }
+            }catch (Exception e){
+                System.out.println("Error al convetir: " + e.getMessage());
+            }
         }
+        scanner.close();
 
     }
 
