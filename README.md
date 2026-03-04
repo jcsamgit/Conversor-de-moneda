@@ -40,5 +40,6 @@ Agregar soporte para más monedas
 
 Implementar interfaz gráfica
 
-ejemplo grafico de uso ingresando opcion 1 para saber cuantos pesos argentinos cuesta 1 dolar: \n
+ejemplo grafico de uso ingresando opcion 1 para saber cuantos pesos argentinos cuesta 1 dolar:   
+<br>
 <img width="327" height="423" alt="image" src="https://github.com/user-attachments/assets/690e43d3-53f7-4e1a-aca6-136ddfafccbc" />
